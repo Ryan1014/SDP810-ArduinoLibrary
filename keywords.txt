@@ -11,6 +11,7 @@ start		KEYWORD2
 stop		KEYWORD2
 singleRead	KEYWORD2
 sleep		KEYWORD2
+reset		KEYWORD2
 getTempC	KEYWORD2
 getTempF	KEYWORD2
 getPressure	KEYWORD2
