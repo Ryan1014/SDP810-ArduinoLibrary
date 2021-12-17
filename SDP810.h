@@ -1,13 +1,6 @@
 /*
  Arduino Library for SDP810-500pa and 125pa
- functions:
- getPress()
- startRead()
- stopRead()
-softReset()
-sleep()
-awake()
-readSN()
+ Writen by Ryan Peters 12/16/21
 */
 
 
@@ -24,6 +17,7 @@ readSN()
 
 #include "Arduino.h"
 
+//softSerial mySerial();
 void i2cStart();
 
 //byte getCRC(uint8_t,size_t);
@@ -80,67 +74,3 @@ class SDP810{
 };
 
 #endif
-
-
-/*softSerial mySerial();
-
-mySerial.print(sdp.read().toString());
-
-SensorData sd = sdp.read();
-int temp = sd.temp;
-
-SDP810 spd;
-SensorData spd.triggeredRead(..)
-
-
-struct SensorData {
-    int press;
-    int temp;
-    int scale;
-    float getTempF();
-} SensorData;
-
-startContinuous(bool mode, bool averaging) { //Mode 1 is Mass flow 0 is Differential; averaging 0 is off 1 is on
-
-
-}
-// this funtion will get all info form the sensorand you can then call getTemp, getPress or getScale.
-SensorData triggeredRead(bool mode, bool clockStretch){ //Mode 1 is Mass flow 0 is Differential; clockStretch 0 is off 1 is on
-    SensorData ret;
-    start...;
-    ret.press = i2creadddd() << 8 | i2creadddd();
-    i2creadddd();
-    ret.press = i2creadddd() << 8 | i2creadddd();
-    i2creadddd();
-    ret.press = i2creadddd() << 8 | i2creadddd();
-    i2creadddd();
-
-    return ret;
-}
-
-read(){
-
-}
-
-
-
-
-
-class
-    void i2cStart();
-
-    float GetTempF();
-    float GetTempC();
-    float GetHumid();
-
-    byte GetTempHighByte();
-    byte GetTempLowByte();
-    byte GetHumidHighByte();
-    byte GetHumidLowByte();
-
-#endif
-
-190239
-crc calculator
-
-http://www.sunshine2k.de/coding/javascript/crc/crc_js.html*/
