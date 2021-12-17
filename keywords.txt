@@ -1,0 +1,27 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+SDP810	KEYWORD1	
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+start		KEYWORD2
+stop		KEYWORD2
+singleRead	KEYWORD2
+sleep		KEYWORD2
+getTempC	KEYWORD2
+getTempF	KEYWORD2
+getPressure	KEYWORD2
+getPressureInches	KEYWORD2
+getScale	KEYWORD2
+massFlow	KEYWORD2
+differential 	KEYWORD2
+massFlowAverage	KEYWORD2
+massFlowCS	KEYWORD2
+differentialAverage	KEYWORD2
+differentialCS	KEYWORD2
+
+
+
