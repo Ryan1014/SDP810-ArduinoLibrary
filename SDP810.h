@@ -7,10 +7,10 @@
 #ifndef SDP810_h
 #define SDP810_h
 
-//read modes
+//Measurment types
 #define massFlow 1
-#define massFlowAverage 2
-#define massFlowCS 2
+#define massFlowAverage 2 // averages since last read
+#define massFlowCS 2  //use i2C clock Strecting (useful for triggered read mode)
 #define differential 3
 #define differentialAverage 4
 #define differentialCS 4
@@ -25,27 +25,30 @@ void i2cStart();
 class SDP810{
     public:
     SDP810();
-    /* start continuous read
-   continous read has 4 modes:
-    Mass flow  
-    Mass flow with Averaging
-    Differential Pressure
-    Differential Pressure with Averaging*/
+ /*start continuous read
+   continuous read has 4 modes:
+        -Mass flow  
+        -Mass flow with Averaging
+        -Differential Pressure
+        -Differential Pressure with Averaging*/
     void start(byte);
 
     //Stop continuous read
     void stop();
 
-    /*Send request for single read(triggered mode)
+  /*Send request for single read(triggered mode)
     Single read has 4 modes:
-        Mass flow  
-        Mass flow with clock strectching
-        Differential Pressure
-        Differential Pressure with clock stretching*/
+        -Mass flow  
+        -Mass flow with clock strectching
+        -Differential Pressure
+        -Differential Pressure with clock stretching*/
     void singleRead(byte);  
 
     // Enter sleep mode(will automatically exit when sent either a singleRead or start command)     
     void sleep();
+
+    // soft reset the sensor
+    void reset();
 
 /*
  below are the commands to get data from the sensor.
