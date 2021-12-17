@@ -116,10 +116,18 @@ switch(mode){
 }       
 
 // Enter sleep mode(will automatically exit when sent either a singleRead or start command)
-void sleep(){
+void SDP810::sleep(){
   Wire.beginTransmission(address);
   Wire.write(0x36); 
   Wire.write(0x77);
+  Wire.endTransmission();
+}
+
+// soft reset the sensor
+void SDP810::reset(){
+  Wire.beginTransmission(address);
+  Wire.write(0x00); 
+  Wire.write(0x06);
   Wire.endTransmission();
 }
 
