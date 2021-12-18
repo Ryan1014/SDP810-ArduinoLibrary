@@ -170,8 +170,8 @@ float SDP810::getTempF(){
 
 // this will return the pressure in pascals
 float SDP810::getPressure(){
-float pressure;
-int scale;
+int16_t pressure;
+float scale = 60.0;
 byte crc;
 bool crcFlag = 0;
 byte timeout = 2;
